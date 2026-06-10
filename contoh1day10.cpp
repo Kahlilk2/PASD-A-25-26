@@ -155,3 +155,4 @@ int main()
     (t.search(k) != NULL)? cout <<"Kunci yang dicari "<< k <<" = Ditemukan" : cout <<"Kunci yang dicari "<< k <<" = Tidak Ditemukan";
     return 0;
 }
+
