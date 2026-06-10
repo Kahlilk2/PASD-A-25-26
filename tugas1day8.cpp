@@ -1,39 +1,61 @@
 #include <iostream>
 using namespace std;
 
-int search01(int A[], int, int);
+int search01(int A[], int jmlelemenarray, int elemen);
+
 int main()
 {
-	const int jmlelemenarray = 11;
-	int tika[jmlelemenarray] = {22,61,15,66,18,25,34,87,55,45,10};
+	int jmlelemenarray;
+	
 	cout << "*******************" << endl;
 	cout <<"**sequental search**" << endl;
 	cout << "*******************" << endl;
-	cout << "isi data nya adalah" << endl;
-	cout << "___________________" << endl;
-	cout << endl;	
+	
+	cout << "masukan jumlah elemen array :";
+	cin >> jmlelemenarray;
+	
+	int *data = new int [jmlelemenarray];
+	
+	cout << endl;
+	cout << "isi daya nya adalah" << endl;
+	cout << "-------------------" << endl;
+	
+	for (int i = 0; i < jmlelemenarray; i++)
+	{
+		cout << "masukan data ["<< i <<"] :";
+		cin >> data[i];
+	}
+	
+	cout << endl;
+	cout << "data yang telah dimasukan : " << endl;
+	cout << "----------------------------" << endl;
+	
 	for (int count = 0; count < jmlelemenarray; count++)
 	{
-		cout <<"\t"<<"data"<<count<<"j"<< "-->"<< tika[count] << endl;
+		cout << "\t" << "data["<< count << "] " << " --> " << data[count] << endl;
 	}
+	
 	int searchelemen = 0;
 	int flaq = 0;
 	cout << "*******************" << endl;
 	cout << endl;
 	cout << "masukan data yang akan anda cari ?"; cin >> searchelemen;
 	
-	flaq = search01(tika, jmlelemenarray, searchelemen);
+	flaq = search01(data, jmlelemenarray, searchelemen);
 	if (flaq != -1)
 		cout <<"data yang dicari ditemukan pada posisi : data["<< flaq <<"]" << endl;
 	else
 		cout << "data yang anda cari tidak ditemukan" << endl;
 	cin.get();
 	return 0;
+	
+	delete[] data;
 }
+
 int search01(int tika[], int jmlelemenarray, int elemen)
-	{
+{
 		int flaq = -1;
-		for (int count = 0; count < jmlelemenarray; count++)
+		for (int count = 0; count< jmlelemenarray; count++)
 		{
 			if(elemen == tika[count])
 			{
@@ -43,3 +65,4 @@ int search01(int tika[], int jmlelemenarray, int elemen)
 		}
 		return flaq;
 	}
+	
